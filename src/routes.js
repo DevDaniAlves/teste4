@@ -10,8 +10,12 @@ const database = require('./database');
 
 (async () => {
     try {
-      await database.sync(); // Sincroniza os modelos com o banco de dados
-      console.log('Conexão com o banco de dados estabelecida com sucesso.');
+      await database.authenticate();
+      console.log('Conexão ao banco de dados estabelecida com sucesso.');
+
+      // Sincronize os modelos com o banco de dados
+      await database.sync();
+      console.log('Modelos sincronizados com o banco de dados.');
     } catch (error) {
       console.error('Erro ao conectar com o banco de dados:', error);
     }
