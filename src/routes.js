@@ -6,7 +6,7 @@ const { Movimentacao } = require('./database/models/movimentacao');
 const { Pasto } =  require('./database/models/pastos');
 const { User } = require('./database/models/user');
 const routes = Router();
-
+const database = require('./database');
 
 (async () => {
     try {
