@@ -7,6 +7,15 @@ const { Pasto } =  require('./database/models/pastos');
 const { User } = require('./database/models/user');
 const routes = Router();
 
+
+(async () => {
+    try {
+      await database.sync(); // Sincroniza os modelos com o banco de dados
+      console.log('Conexão com o banco de dados estabelecida com sucesso.');
+    } catch (error) {
+      console.error('Erro ao conectar com o banco de dados:', error);
+    }
+  })();
 // Merendeira
 routes.get('/animais', async (req, res) => {
     try {
